@@ -1,3 +1,4 @@
+import math
 """Övningar på iterators."""
 
 
@@ -10,8 +11,18 @@ class Cubes():
     Talserien ska inte ha något slut.
 
     """
-    pass
+    def __init__(self):
+        self.c = c = 1
 
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        for c in range(1, 1001):
+            return c ** 3
+            self.c += 1
+        else:
+            StopIteration
 
 class Primes():
     """En iterator som returnerar primtal.
@@ -19,6 +30,7 @@ class Primes():
     Talserien som förväntas börjar alltså: 2, 3, 5, 7, 11, 13, 17, 19, 23, ...
 
     """
+
     pass
 
 

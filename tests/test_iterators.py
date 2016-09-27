@@ -14,13 +14,13 @@ def test_cubes():
     for i in range(1, 1001):
         assert next(c) == i ** 3
 
-
+@pytest.mark.skip
 def test_primes_is_iterator():
     assert '__init__' in dir(Primes)
     iterator = iter(Primes())
     assert '__next__' in dir(iterator)
 
-
+@pytest.mark.skip
 def test_primes():
     with open('tests/data_primes.json') as file:
         data = json.load(file)
@@ -29,12 +29,12 @@ def test_primes():
     for prime in data:
         assert next(p) == prime
 
-
+@pytest.mark.skip
 def test_fibonnaci_is_iterator(self):
     assert '__init__' in dir(Fibonacci)
     iterator = iter(Fibonacci())
     assert '__next__' in dir(iterator)
-
+@pytest.mark.skip
 def test_fibonacci(self):
     with open('tests/data_fibonacci.json') as file:
         data = json.load(file)
@@ -43,13 +43,13 @@ def test_fibonacci(self):
     for fibonacci in data:
         assert next(f) == fibonacci
 
-
+@pytest.mark.skip
 def test_alphabet_is_iterator(self):
     assert '__init__' in dir(Alphabet)
     iterator = iter(Alphabet())
     assert '__next__' in dir(iterator)
 
-
+@pytest.mark.skip
 def test_alphabet(self):
     data = ['Alef', 'Bet', 'Gimel', 'Dalet', 'He', 'Vav', 'Zayin', 'Het',
             'Tet', 'Yod', 'Kaf', 'Lamed', 'Mem', 'Nun', 'Samekh', 'Ayin',
@@ -61,13 +61,13 @@ def test_alphabet(self):
     with pytest.raises(StopIteration):
         next(a)
 
-
+@pytest.mark.skip
 def test_permutations_is_iterator(self):
     assert '__init__' in dir(Permutations)
     iterator = iter(Permutations())
     assert '__next__' in dir(iterator)
 
-
+@pytest.mark.skip
 def test_permutations(self):
     data = ['abc', 'acb', 'bac', 'cab', 'cba', 'bca']
     result = []
@@ -80,13 +80,13 @@ def test_permutations(self):
     with pytest.raises(StopIteration):
         next(p)
 
-
+@pytest.mark.skip
 def test_look_and_say_is_iterator():
     assert '__init__' in dir(LookAndSay)
     iterator = iter(LookAndSay())
     assert '__next__' in dir(iterator)
 
-
+@pytest.mark.skip
 def test_look_and_say():
     with open('tests/data_lookandsay.json') as file:
         data = json.load(file)

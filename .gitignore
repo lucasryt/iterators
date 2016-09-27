@@ -26,6 +26,7 @@ $RECYCLE.BIN/
 # Python generated files
 *.pyc
 __pycache__
+.cache
 
 # Virtual environments
 env
