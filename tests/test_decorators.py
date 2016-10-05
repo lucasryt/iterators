@@ -2,8 +2,9 @@ import pytest
 from exercises.decorators import memoize, rovarsprak
 from mock import Mock
 
-@pytest.mark.skip
-def test_memoize_decorator(self):
+
+@pytest.mark.skip('Not implemented yet.')
+def test_memoize_decorator():
     dummy_fn = Mock(name='dummy_fn')
     dummy_fn.return_value = 'spam'
 
@@ -20,8 +21,9 @@ def test_memoize_decorator(self):
     assert wrapped(7) == 'spam'
     assert dummy_fn.call_count == 2
 
-@pytest.mark.skip
-def test_rovarsprak_decorator(self):
+
+@pytest.mark.skip('Not implemented yet.')
+def test_rovarsprak_decorator():
     @rovarsprak
     def test_fun():
         return 'testord'
