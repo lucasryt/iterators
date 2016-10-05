@@ -1,4 +1,4 @@
-import math
+from math import sqrt, floor
 """Övningar på iterators."""
 
 
@@ -12,17 +12,15 @@ class Cubes():
 
     """
     def __init__(self):
-        self.c = c = 1
+        self.c = 0
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        for c in range(1, 1001):
-            return c ** 3
-            self.c += 1
-        else:
-            StopIteration
+        self.c += 1
+        return self.c ** 3
+
 
 class Primes():
     """En iterator som returnerar primtal.
@@ -31,7 +29,29 @@ class Primes():
 
     """
 
-    pass
+    def __init__(self):
+        self.p = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        while True:
+            self.p += 1
+
+            if self._is_prime(self.p):
+                return self.p
+
+    @staticmethod
+    def _is_prime(x):
+        n_max = floor(sqrt(x))
+        n = 2
+        while n <= n_max:
+            if x % n == 0:
+                return False
+            else:
+                n += 1
+        return True
 
 
 class Fibonacci():
@@ -43,7 +63,21 @@ class Fibonacci():
     Alltså börjar serien: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
 
     """
-    pass
+
+    def __init__(self):
+        self.tal1 = 0
+        self.tal2 = 1
+        self.i = -1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.i < 1:
+            self.i += 1
+            return self.i
+        self.tal1, self.tal2 = self.tal2, self.tal1 + self.tal2
+        return self.tal2
 
 
 class Alphabet():
@@ -56,6 +90,22 @@ class Alphabet():
     Nun, Samekh, Ayin, Pe, Tsadi, Qof, Resh, Shin, Tav
 
     """
+    def __init__(self):
+        self.list = ['Alef', 'Bet', 'Gimel', 'Dalet', 'He', 'Vav', 'Zayin',
+                     'Het', 'Tet', 'Yod', 'Kaf', 'Lamed', 'Mem', 'Nun',
+                     'Samekh', 'Ayin', 'Pe', 'Tsadi', 'Qof', 'Resh', 'Shin',
+                     'Tav']
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        return char
+
+    def char(self):
+        for char in list:
+            self.index += 1
 
 
 class Permutations():
